@@ -1,0 +1,116 @@
+.body {
+  background-color: #F6F6F6;
+  font-family: Arial;
+  padding: 10px;
+}
+
+.header {
+    background-color: #2d2824;
+    padding: 25px;
+    text-align: center;
+}
+
+.header h1 {
+    font-size: 60px;
+    font-family: Impact;
+}
+
+.topnav {
+    background-color: #e4e4e4;
+    overflow: hidden;
+}
+
+.topnav a {
+  float: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #F6F6F6;
+  text-decoration: none;
+}
+
+.topnav a:hover {
+    background-color: #F6F6F6;
+    color: #e4e4e4;
+}
+
+.leftcolumn {   
+    float: left;
+    width: 70%;
+}
+
+.rightcolumn {
+    float: left;
+    width: 30%;
+    padding-left: 10px;
+}
+
+.card {
+    background-color: #e4e4e4;
+    padding: 20px;
+    margin-top: 20px;
+}
+.cardDifferent {
+    background-color: #ffffff;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.footer {
+    padding: 25px;
+    text-align: right;
+    background: #F6F6F6;
+    margin-top: 10px;
+}
+
+/* Responsive layout - when the screen is less than 850px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 850px) {
+    .leftcolumn, .rightcolumn {   
+        width: 100%;
+        padding: 0;
+    }
+}
+
+/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+@media screen and (max-width: 400px) {
+    .topnav a {
+        float: none;
+        width: 100%;
+    }
+}
+
+textarea {
+   resize: none;
+}
+
+/* Tālāk no citiem failiem css */
+
+#login{
+		background-color: #F6F6F6;
+		padding: 5%;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+}
+    
+#forma{
+		background: #F6F6F6;
+		padding: 5%;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+}
+
+#regisText{
+    background:#e4e4e4;
+    padding: 10%;
+}
