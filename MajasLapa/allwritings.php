@@ -13,7 +13,7 @@ mysqli_select_db($conn, "writers");
 <html>
 
 <head>
-<title>iDala darbu lapa</title>
+<title>iDala dokumentu lapa</title>
 <link rel="icon" href="favicon.ico" type="image/ico">
 <style>
 * {
@@ -114,13 +114,13 @@ textarea {
 <body background="start-background.jpg">
 
 <div class="header">
-  <h1>iDala darbu lapa</h1>
-  <p>Jūs rakstāt, mēs palīdzam saglabāt, dalīties, iedvesmoties</p>
+  <h1>iDala dokumentu lapa</h1>
+  <p>CMS dokumentu pārvaldībai tiešsaistē</p>
 </div>
 
 <div class="topnav">
-  <a href="profile.php">Ievietot darbu</a>
-  <a href="allwritings.php">iDala darbi</a>
+   <a href="profile.php">Augšupielādēt</a>
+  <a href="allwritings.php">iDala dokumenti</a>
   <a href="logout.php" style="float:right">Iziet no profila</a>
 </div>
 
@@ -128,7 +128,7 @@ textarea {
   <div class="leftcolumn">
    
     <div class="cardDifferent">
-      <h2 align="center">iDala ievietotie darbi</h2>
+      <h2 align="center">iDala ievietotie dokumenti</h2>
 	</div>
 <?php
 $sql = "SELECT id, name, email, title, content FROM writing ORDER BY id DESC;";
@@ -160,15 +160,13 @@ else {
 	
     <div class="card">
       <h3>Saistītas lapas</h3>
-       <p><a href ="http://rakstnieciba.lv/">Latvijas Rakstnieku savienība<a><br></p>
-	   <p><a href ="http://rakstu.lv/">Literārā Akadēmija<a><br></p>
-	   <p><a href ="http://literatura.lv/lv/post/index">Literatūras jaunumi<a><br></p>
+      <p><a href ="https://lv.wikipedia.org/wiki/Satura_p%C4%81rvald%C4%ABbas_sist%C4%93ma">Informācija par CMS<a><br></p>
     </div>
   </div>
 </div>
 
 <div class="footer">
-  <h2>iDala - iedvesmo un dalies</h2>
+  <h2>iDala dokumentu pārvaldība</h2>
 </div>
 
 </body>

@@ -20,7 +20,7 @@ if(isset($_REQUEST["submit"])) {
 <html>
 
 <head>
-<title>Ievietot darbu iDala</title>
+<title>iDala</title>
 <link rel="icon" href="favicon.ico" type="image/ico">
 <style>
 * {
@@ -118,19 +118,19 @@ textarea {
 
 <div class="header">
   <h1>iDala</h1>
-  <p>Jūs rakstāt, mēs palīdzam saglabāt, dalīties, iedvesmoties</p>
+  <p>CMS dokumentu pārvaldībai tiešsaistē</p>
 </div>
 
 <div class="topnav">
-  <a href="profile.php">Ievietot darbu</a>
-  <a href="allwritings.php">iDala darbi</a>
+  <a href="profile.php">Augšupielādēt</a>
+  <a href="allwritings.php">iDala dokumenti</a>
   <a href="logout.php" style="float:right">Iziet</a>
 </div>
 
 <div class="row">
   <div class="leftcolumn">
     <div class="card">
-		<h2>Ievietot iDala jaunu darbu</h2>
+		<h2>Augšupielādēt iDala jaunu dokumentu</h2>
 		<form action="" method="post" id="formaa">
 		Autors: <br>
 		<textarea placeholder="Autora pseidonīms / vārds, uzvārds" name="name" id="name" cols="100" rows="1" value='<?php if(isset($_POST['name'])) echo $_POST['name']; ?>'></textarea><br/>	
@@ -195,15 +195,13 @@ formaa.addEventListener("submit", validateForm, false);
 	
     <div class="card">
       <h3>Saistītas lapas</h3>
-       <p><a href ="http://rakstnieciba.lv/">Latvijas Rakstnieku savienība<a><br></p>
-	   <p><a href ="http://rakstu.lv/">Literārā Akadēmija<a><br></p>
-	   <p><a href ="http://literatura.lv/lv/post/index">Literatūras jaunumi<a><br></p>
+       <p><a href ="https://lv.wikipedia.org/wiki/Satura_p%C4%81rvald%C4%ABbas_sist%C4%93ma">Informācija par CMS<a><br></p>
     </div>
   </div>
 </div>
 
 <div class="footer">
-  <h2>iDala - iedvesmo un dalies</h2>
+  <h2>iDala dokumentu pārvaldība</h2>
 </div>
 
 

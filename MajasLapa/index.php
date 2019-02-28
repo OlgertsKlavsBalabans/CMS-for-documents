@@ -32,7 +32,7 @@ if(isset($_SESSION['login_user'])&& $_SESSION['login_user'] == true){
 <html>
 <head>
 <link rel="icon" href="favicon.ico" type="image/ico">
-	<title>iDala | iedvesmo | dalies </title>
+	<title>iDala dokumentiem </title>
 	<style>
 	#login{
 		background: rgba(230,233,205,0.7);
@@ -63,7 +63,6 @@ if(isset($_SESSION['login_user'])&& $_SESSION['login_user'] == true){
 		<span><?php echo $error; ?></span>
 	</form>
 		
-	<p>Vēlies kļūt par reģistrētu lietotāju? Reģistrējies <a href ="register.php">šeit<a>!<br></p>
 	<p>Kādam nolūkam paredzēta šī mājaslapa? Uzzini <a href ="why.html">šeit<a>!<br></p>
 	</div>
 </body>
