@@ -1,83 +1,76 @@
-.body {
-  background-color: #F6F6F6;
-  font-family: Arial;
-  padding: 10px;
+* {
+    box-sizing: border-box;
 }
-
+body {
+    font-family: Arial;
+    padding: 10px;
+    background-color: #282636;
+}
 .header {
-    background-color: #2d2824;
-    padding: 25px;
+    padding: 20px;
     text-align: center;
+    color: #282636;
+    background-color: white;
 }
-
 .header h1 {
     font-size: 60px;
-    font-family: Impact;
+    color: #282636;
 }
-
 .topnav {
-    background-color: #e4e4e4;
     overflow: hidden;
+    background-color: #282636;
 }
-
 .topnav a {
-  float: none;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: #F6F6F6;
-  text-decoration: none;
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 15px 15px;
+    text-decoration: none;
 }
-
 .topnav a:hover {
-    background-color: #F6F6F6;
-    color: #e4e4e4;
+    background-color: white;
+    color: #282636;
 }
-
 .leftcolumn {   
     float: left;
-    width: 70%;
+    width: 80%;
+    background-color: white;
 }
-
 .rightcolumn {
     float: left;
-    width: 30%;
-    padding-left: 10px;
+    width: 20%;
+    padding-left: 20px;
 }
-
 .card {
-    background-color: #e4e4e4;
-    padding: 20px;
-    margin-top: 20px;
+    background-color: f1f1f1;
+    padding: 10px;
+    margin-top: 10px;
+    background-color: white;
 }
 .cardDifferent {
-    background-color: #ffffff;
-    padding: 20px;
-    margin-top: 20px;
+    background-color: white;
+    padding: 5px;
+    margin-top: 10px;
 }
-
 .row:after {
     content: "";
     display: table;
     clear: both;
 }
-
 .footer {
-    padding: 25px;
-    text-align: right;
-    background: #F6F6F6;
-    margin-top: 10px;
+    padding: 5px;
+    text-align: center;
+    background: white;
+    margin-top: 5px;
 }
-
-/* Responsive layout - when the screen is less than 850px wide, make the two columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 850px) {
+/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 800px) {
     .leftcolumn, .rightcolumn {   
         width: 100%;
         padding: 0;
     }
 }
-
 /* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
 @media screen and (max-width: 400px) {
     .topnav a {
@@ -85,32 +78,6 @@
         width: 100%;
     }
 }
-
 textarea {
    resize: none;
-}
-
-/* Tālāk no citiem failiem css */
-
-#login{
-		background-color: #F6F6F6;
-		padding: 5%;
-		position: absolute;
-		top: 50%;
-		left: 50%;
-		transform: translate(-50%, -50%);
-}
-    
-#forma{
-		background: #F6F6F6;
-		padding: 5%;
-		position: absolute;
-		top: 50%;
-		left: 50%;
-		transform: translate(-50%, -50%);
-}
-
-#regisText{
-    background:#e4e4e4;
-    padding: 10%;
 }
