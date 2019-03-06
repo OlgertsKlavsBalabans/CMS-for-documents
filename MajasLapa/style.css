@@ -1,25 +1,63 @@
+/*css for index.php, why.html and register.php*/
+#login{
+	background: #d6d2f7;
+	padding: 4%;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+#regisText{
+	background: white;
+	padding: 5%;
+}
+/*css for why.html*/
+#all{
+	background: #d6d2f7;
+	padding: 4%;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+#list{
+	text-align: left;
+}
+/*css for register.php*/
+#forma{
+	background: #d6d2f7;
+	padding: 4%;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+/*css for profile.php and allwritings.php*/
 * {
     box-sizing: border-box;
 }
 body {
     font-family: Arial;
     padding: 10px;
-    background-color: #282636;
+	background-color: #282636; 
 }
 .header {
-    padding: 20px;
+    padding: 30px;
     text-align: center;
-    color: #282636;
-    background-color: white;
+    background: white;
+	color: #282636; 
 }
+
 .header h1 {
-    font-size: 60px;
-    color: #282636;
+    font-size: 50px;
+	color: #282636; 
 }
+
 .topnav {
     overflow: hidden;
-    background-color: #282636;
+    background-color: #686772; 
 }
+
 .topnav a {
     float: left;
     display: block;
@@ -28,42 +66,47 @@ body {
     padding: 15px 15px;
     text-decoration: none;
 }
+
 .topnav a:hover {
-    background-color: white;
+	background-color: #d6d2f7;
     color: #282636;
 }
+
 .leftcolumn {   
     float: left;
     width: 80%;
-    background-color: white;
 }
+
 .rightcolumn {
     float: left;
     width: 20%;
     padding-left: 20px;
 }
+
 .card {
-    background-color: f1f1f1;
-    padding: 10px;
-    margin-top: 10px;
-    background-color: white;
+    background-color: #f1f1f1;
+    padding: 20px;
+    margin-top: 20px;
 }
+/*cardDifferent is a section in allwriting.php with text - iDala ievietotie darbi */
 .cardDifferent {
     background-color: white;
-    padding: 5px;
-    margin-top: 10px;
+    padding: 20px;
+    margin-top: 20px;
 }
 .row:after {
     content: "";
     display: table;
     clear: both;
 }
+
 .footer {
     padding: 5px;
     text-align: center;
-    background: white;
-    margin-top: 5px;
+    background: #f1f1f1;
+    margin-top: 20px;
 }
+
 /* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
 @media screen and (max-width: 800px) {
     .leftcolumn, .rightcolumn {   
@@ -71,6 +114,7 @@ body {
         padding: 0;
     }
 }
+
 /* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
 @media screen and (max-width: 400px) {
     .topnav a {
@@ -78,6 +122,8 @@ body {
         width: 100%;
     }
 }
+
 textarea {
    resize: none;
+   width: 100%;
 }

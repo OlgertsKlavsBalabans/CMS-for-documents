@@ -32,25 +32,11 @@ if(isset($_SESSION['login_user'])&& $_SESSION['login_user'] == true){
 <html>
 <head>
 <link rel="icon" href="favicon.ico" type="image/ico">
+<link rel="stylesheet" type="text/css" href="style.css">
 	<title>iDala dokumentiem </title>
-	<style>
-	#login{
-		background: rgba(230,233,205,0.7);
-		padding: 4%;
-		position: absolute;
-		top: 50%;
-		left: 50%;
-		transform: translate(-50%, -50%);
-	}
-	
-	#regisText{
-		background: rgba(209,201,168,0.8);
-		padding: 5%;
-	}
-	</style>
 </head>
 
-<body align="center" background="start-background.jpg">
+<body align="center">
 	<div id="login">
 	<img src="source.gif" alt=""style="width:12.5em;height:13.12em;">
 	<h2 id="regisText">Pieslēgties lapai:</h2>

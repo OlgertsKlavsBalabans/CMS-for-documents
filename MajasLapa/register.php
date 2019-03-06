@@ -42,28 +42,14 @@ echo("error".$ex->getMessage());
 
 <head>
 	<link rel="icon" href="favicon.ico" type="image/ico">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	
 	<meta charset="utf-8">
 	<title>Pievienoties</title>
-
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
-	<style>
-	#forma{
-		background: rgba(230,233,205,0.7);
-		padding: 4%;
-		position: absolute;
-		top: 50%;
-		left: 50%;
-		transform: translate(-50%, -50%);
-	}
-	#regisText{
-		background: rgba(209,201,168,0.8);
-		padding: 5%;
-	}
-	</style>
 </head>
  
 <body background="start-background.jpg">
