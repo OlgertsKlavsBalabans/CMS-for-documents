@@ -3,7 +3,7 @@
 $servername = "localhost";
 $username="root";
 $password="";
-$dbname="writers";
+$dbname="csm";
 try{
 $conn = mysqli_connect($servername, $username,$password,$dbname);
 //echo("Reģistrēties");
@@ -18,7 +18,7 @@ $gender=$_POST['gender'];
 $email=$_POST['email'];
 $user = $_POST['username'];
 $pass = $_POST['password'];
-$register_query = "INSERT INTO `registration`(`fname`, `lname`, `age`, `gender`, `email`, `username`, `password`) VALUES ('$fname','$lname', '$age','$gender','$email','$user','$pass')";
+$register_query = "INSERT INTO `users`(`fname`, `lname`, `age`, `gender`, `email`, `username`, `password`) VALUES ('$fname','$lname', '$age','$gender','$email','$user','$pass')";
 try{
 $register_result = mysqli_query($conn, $register_query);
 if($register_result){

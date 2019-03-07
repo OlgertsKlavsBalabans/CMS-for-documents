@@ -10,8 +10,8 @@ if (isset($_POST['submit'])) {
 		$password=$_POST['password'];
 
 		$connection = mysqli_connect("localhost", "root", "");
-		$db = mysqli_select_db($connection, "writers");
-		$query = mysqli_query($connection, "select * from registration where password='$password' AND username='$username'");
+		$db = mysqli_select_db($connection, "csm");
+		$query = mysqli_query($connection, "select * from users where password='$password' AND username='$username'");
 		$rows = mysqli_num_rows($query);
 		if ($rows == 1) {
 			$_SESSION['login_user']=$username; 
