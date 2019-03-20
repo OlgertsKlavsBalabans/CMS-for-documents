@@ -13,7 +13,7 @@ mysqli_select_db($conn, "writers");
 <html>
 
 <head>
-<title>iDala rekini</title>
+<title>iDala dokumentu lapa</title>
 <link rel="icon" href="favicon.ico" type="image/ico">
 <link rel="stylesheet" type="text/css" href="style.css">
 </head>
