@@ -18,7 +18,8 @@ $gender=$_POST['gender'];
 $email=$_POST['email'];
 $user = $_POST['username'];
 $pass = $_POST['password'];
-$register_query = "INSERT INTO `users`(`fname`, `lname`, `age`, `gender`, `email`, `username`, `password`) VALUES ('$fname','$lname', '$age','$gender','$email','$user','$pass')";
+$access = $_POST['access'];
+$register_query = "INSERT INTO `users`(`fname`, `lname`, `age`, `gender`, `email`, `username`, `password`,`access`) VALUES ('$fname','$lname', '$age','$gender','$email','$user','$pass','$access')";
 try{
 $register_result = mysqli_query($conn, $register_query);
 if($register_result){
@@ -105,6 +106,22 @@ echo("error".$ex->getMessage());
 <tr>
 
 <tr>
+<td>Access līmenis</td>
+<td><input type="radio" name = "access" value = "1" placeholder="1" id="access"> Administrator</td>
+</tr>
+<tr>
+<tr>
+<td></td>
+<td><input type="radio" name = "access" value = "2" placeholder="1" id="access">User</td>
+</tr>
+<tr>
+<tr>
+<td></td>
+<td><input type="radio" name = "access" value = "3" placeholder="1" id="access">Viewer</td>
+</tr>
+<tr>
+
+<tr>
 <td></td>
 <td><input type="submit" name="submit" value="Reģistrēties" id="submit" onclick="myFunction()"></td>
 </tr>
@@ -127,6 +144,7 @@ function validateForm(event) {
 	var password = document.getElementById('password');
 	var password2 = document.getElementById('password2');
 	var emailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+	var access = document.getElementById('access');
 	
 	if (name.value === "" ) {
 		alert("Ievadiet vārdu!");	
@@ -170,6 +188,10 @@ function validateForm(event) {
 	}	
 	else if(!(password.value==password2.value)) {
 		alert("Ievadītās paroles nav vienādas!");
+		event.preventDefault();
+	}
+	else if ((forma.access[0].checked == false) && (forma.access[1].checked == false) && (forma.access[2].checked == false)) {
+		alert("Nav norādīts access līmenis!");
 		event.preventDefault();
 	}
 	forma.submit();
