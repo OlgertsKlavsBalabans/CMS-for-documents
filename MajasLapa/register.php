@@ -4,6 +4,7 @@ $servername = "localhost";
 $username="root";
 $password="";
 $dbname="csm";
+$error=''; 
 try{
 $conn = mysqli_connect($servername, $username,$password,$dbname);
 //echo("Reģistrēties");
@@ -20,7 +21,9 @@ $user = $_POST['username'];
 $pass = $_POST['password'];
 $access = $_POST['access'];
 $register_query = "INSERT INTO `users`(`fname`, `lname`, `age`, `gender`, `email`, `username`, `password`,`access`) VALUES ('$fname','$lname', '$age','$gender','$email','$user','$pass','$access')";
-try{
+$username_check_query = mysqli_query($conn, "select * from users where username='$user'");
+if (mysqli_num_rows($username_check_query)== 0) {
+	try{
 $register_result = mysqli_query($conn, $register_query);
 if($register_result){
 if(mysqli_affected_rows($conn)>0){
@@ -36,6 +39,13 @@ echo("Error in registration");
 }catch(Exception $ex){
 echo("error".$ex->getMessage());
 }
+}
+
+else {
+	$error ="<font color='red'><b><i><br>Jau eksistē lietotājs ar šādu lietotājvārdu!</i></b></font> ";
+}
+
+
 }
  
 ?>
@@ -126,6 +136,11 @@ echo("error".$ex->getMessage());
 <td><input type="submit" name="submit" value="Reģistrēties" id="submit" onclick="myFunction()"></td>
 </tr>
 </table>
+<tr>
+<td></td>
+<td>><?php echo $error; ?></</td>
+</tr>
+</table>
 <p><a href="index.php">Uz sākumu</a></p>
 <p><a href="why.html">Informācija</a></p>
 
@@ -134,7 +149,7 @@ echo("error".$ex->getMessage());
 <script>
 var forma = document.getElementById('forma');
 function validateForm(event) {
-	
+
 	var name = document.getElementById('name');
 	var surname = document.getElementById('surname');
 	var age = document.getElementById('age');
@@ -194,6 +209,7 @@ function validateForm(event) {
 		alert("Nav norādīts access līmenis!");
 		event.preventDefault();
 	}
+
 	forma.submit();
 
 
