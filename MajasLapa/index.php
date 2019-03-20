@@ -8,13 +8,16 @@ if (isset($_POST['submit'])) {
 	else {
 		$username=$_POST['username'];
 		$password=$_POST['password'];
-
+		
 		$connection = mysqli_connect("localhost", "root", "");
 		$db = mysqli_select_db($connection, "csm");
 		$query = mysqli_query($connection, "select * from users where password='$password' AND username='$username'");
+		$row = mysqli_fetch_row ($query);
 		$rows = mysqli_num_rows($query);
 		if ($rows == 1) {
-			$_SESSION['login_user']=$username; 
+			$_SESSION['login_user']=$username;	
+			$_SESSION['user']=$row[7]; 
+			
 			header("location: profile.php"); 			
 		}
 		else {
