@@ -13,7 +13,7 @@ mysqli_select_db($conn, "writers");
 <html>
 
 <head>
-<title>iDala dokumentu lapa</title>
+<title>iDala līgumi</title>
 <link rel="icon" href="favicon.ico" type="image/ico">
 <link rel="stylesheet" type="text/css" href="style.css">
 </head>
@@ -26,16 +26,19 @@ mysqli_select_db($conn, "writers");
 </div>
 
 <div class="topnav">
-   <a href="profile.php">Augšupielādēt</a>
-  <a href="allwritings.php">iDala dokumenti</a>
-  <a href="logout.php" style="float:right">Iziet no profila</a>
+  <a href="profile.php">Augšupielādēt</a>
+  <a href="pavadzimes.php">Pavadzīmes</a>
+   <a href="rekini.php">Rēķini</a>
+    <a href="ligumi.php">Līgumi</a>
+	 <a href="citi.php">Citi dokumenti</a>
+  <a href="logout.php" style="float:right">Iziet</a>
 </div>
 
 <div class="row">
   <div class="leftcolumn">
    
     <div class="cardDifferent">
-      <h2 align="center">iDala ievietotie dokumenti</h2>
+      <h2 align="center">iDala ievietotie līgumi</h2>
 	</div>
 <?php
 $sql = "SELECT id, name, email, title, content FROM writing ORDER BY id DESC;";

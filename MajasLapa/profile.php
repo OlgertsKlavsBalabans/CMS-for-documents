@@ -33,7 +33,10 @@ if(isset($_REQUEST["submit"])) {
 
 <div class="topnav">
   <a href="profile.php">Augšupielādēt</a>
-  <a href="allwritings.php">iDala dokumenti</a>
+  <a href="pavadzimes.php">Pavadzīmes</a>
+   <a href="rekini.php">Rēķini</a>
+    <a href="ligumi.php">Līgumi</a>
+	 <a href="citi.php">Citi dokumenti</a>
   <a href="logout.php" style="float:right">Iziet</a>
 </div>
 
