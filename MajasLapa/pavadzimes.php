@@ -13,7 +13,7 @@ mysqli_select_db($conn, "writers");
 <html>
 
 <head>
-<title>iDala pavadzimes</title>
+<title>iDala pavadzīmes</title>
 <link rel="icon" href="favicon.ico" type="image/ico">
 <link rel="stylesheet" type="text/css" href="style.css">
 </head>
@@ -21,7 +21,7 @@ mysqli_select_db($conn, "writers");
 <body>
 
 <div class="header">
-  <h1>iDala dokumentu lapa</h1>
+  <h1>iDala pavadzīmes</h1>
   <p>CMS dokumentu pārvaldībai tiešsaistē</p>
 </div>
 

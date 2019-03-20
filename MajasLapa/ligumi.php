@@ -21,7 +21,7 @@ mysqli_select_db($conn, "writers");
 <body>
 
 <div class="header">
-  <h1>iDala dokumentu lapa</h1>
+  <h1>iDala līgumi</h1>
   <p>CMS dokumentu pārvaldībai tiešsaistē</p>
 </div>
 
