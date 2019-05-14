@@ -18,7 +18,7 @@ if (isset($_POST['submit'])) {
 			$_SESSION['login_user']=$username;	
 			$_SESSION['user']=$row[8]; 
 			$_SESSION['email']=$row[5]; 
-			header("location: profile.php"); 			
+			header("location: pavadzimes.php"); 			
 		}
 		else {
 			$error = "<font color='red'><b><i><br>Nepareizs lietotājvārds un / vai parole!</i></b></font>";
@@ -28,7 +28,7 @@ if (isset($_POST['submit'])) {
 }
 
 if(isset($_SESSION['login_user'])&& $_SESSION['login_user'] == true){
-	print "<script language=\"Javascript\">document.location.href='profile.php' ;</script>";
+	print "<script language=\"Javascript\">document.location.href='pavadzimes.php' ;</script>";
 }
 ?>
 <!DOCTYPE html>
