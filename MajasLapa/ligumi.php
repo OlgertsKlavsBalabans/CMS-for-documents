@@ -111,7 +111,7 @@ if(isset($_POST['submit'])!=""){
 	
     <div class="card">
       <h3>Saistītas lapas</h3>
-      <p><a href ="https://lv.wikipedia.org/wiki/Satura_p%C4%81rvald%C4%ABbas_sist%C4%93ma">Informācija par CMS<a><br></p>
+      <p><a href ="https://lv.wikipedia.org/wiki/Satura_p%C4%81rvald%C4%ABbas_sist%C4%93ma">Informācija par CMS</a><br></p>
     </div>
   </div>
 </div>
