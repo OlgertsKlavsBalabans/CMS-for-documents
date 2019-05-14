@@ -32,6 +32,13 @@
 	left: 50%;
 	transform: translate(-50%, -50%);
 }
+
+/*Image tag so all gifs are displayed in div*/
+#imageTag {
+    background-color: #f1f1f1;
+    padding: 20px;
+    margin-top: 20px;
+}
 /*css for profile.php and allwritings.php*/
 * {
     box-sizing: border-box;

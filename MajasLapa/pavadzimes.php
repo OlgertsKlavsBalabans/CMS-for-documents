@@ -58,7 +58,7 @@ else {
   </div>
 
   <div class="rightcolumn">
-    <div class="card">
+    <div id="imageTag">
       <h2>iDala</h2>
       <script src="js/Giffy.js"></script>
     </div>

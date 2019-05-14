@@ -41,7 +41,7 @@ if(isset($_SESSION['login_user'])&& $_SESSION['login_user'] == true){
 
 <body align="center">
 	<div id="login">
-	<script src="js/Giffy.js"></script>
+	<script src="js/GiffyIndex.js" ></script>
 	<h2 id="regisText">Pieslēgties lapai:</h2>
 	<form action="" method="post">
 		<label>Lietotājvārds:</label>

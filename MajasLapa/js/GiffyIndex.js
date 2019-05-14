@@ -7,11 +7,11 @@ function show_image() {
     img.src = gif1[integer]
     img.id = "gif"
     alt = ""
-    img.style = "width:8.5em;height:9.12em;" 
+    img.style = "width:12.5em;height:13.12em;" 
    
     // This next line will just add it to the <body> tag
     
-	document.getElementById('imageTag').appendChild(img);
+	document.getElementById('login').appendChild(img);
 
 
     //This adds something that listens for clicks
