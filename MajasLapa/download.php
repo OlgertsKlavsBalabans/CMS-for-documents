@@ -1,4 +1,5 @@
 <?php
+session_start();
 function output_file($file, $name, $mime_type='')
 {
 if(!is_readable($file)) die('File not found!');

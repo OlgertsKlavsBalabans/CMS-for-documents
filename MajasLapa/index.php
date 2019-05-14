@@ -17,7 +17,6 @@ if (isset($_POST['submit'])) {
 		if ($rows == 1) {
 			$_SESSION['login_user']=$username;	
 			$_SESSION['user']=$row[7]; 
-			
 			header("location: profile.php"); 			
 		}
 		else {
