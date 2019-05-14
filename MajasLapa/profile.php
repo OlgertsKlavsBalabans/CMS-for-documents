@@ -96,16 +96,21 @@ formaa.addEventListener("submit", validateForm, false);
   </div>
 
   <div class="rightcolumn">
+  <div class ="card">
+	<h2>iDala</h2>
+	</div>
+	<div class ="card">
     <div id="imageTag">
-      <h2>iDala</h2>
-      <script src="js/Giffy.js"></script>
+	<h2> This is you </h2>
+      
+      <script src="js/Giffy.js"></script> 
     </div>
+	</div>
 	
     <div class="card">
 		<h3>Informācija</h3>
 		<p>Kādam nolūkam paredzēta šī mājaslapa? Uzzini <a href ="why.html">šeit<a>!<br></p>
     </div>
-	
     <div class="card">
       <h3>Saistītas lapas</h3>
        <p><a href ="https://lv.wikipedia.org/wiki/Satura_p%C4%81rvald%C4%ABbas_sist%C4%93ma">Informācija par CMS<a><br></p>
