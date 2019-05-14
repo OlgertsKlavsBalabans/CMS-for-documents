@@ -1,6 +1,7 @@
 <?php
 session_start();
 $user_name=$_SESSION['login_user'];
+
 $conn=new PDO('mysql:host=localhost; dbname=csm', 'root', '') or die(mysql_error());
 if(isset($_POST['submit'])!=""){
 
@@ -160,7 +161,7 @@ if(isset($_POST['submit'])!=""){
                       <thead>
                       <tr>
 
-                          <th align="center">Lietotājs</th>>
+                          <th align="center">Lietotājs</th>
                           <th width="80%" align="center">Fails</th>
                           <th align="center">Lejupladēt</th>
                       </tr>
