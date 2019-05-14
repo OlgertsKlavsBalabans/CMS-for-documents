@@ -1,4 +1,5 @@
 <?php
+session_start();
 $hostname = "localhost";
 $username = "user";
 $password = "";
@@ -18,7 +19,6 @@ if(isset($_REQUEST["submit"])) {
 
 <!DOCTYPE html>
 <html>
-
 <head>
 <title>iDala</title>
 <link rel="icon" href="favicon.ico" type="image/ico">

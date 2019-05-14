@@ -16,7 +16,8 @@ if (isset($_POST['submit'])) {
 		$rows = mysqli_num_rows($query);
 		if ($rows == 1) {
 			$_SESSION['login_user']=$username;	
-			$_SESSION['user']=$row[7]; 
+			$_SESSION['user']=$row[8]; 
+			$_SESSION['email']=$row[5]; 
 			header("location: profile.php"); 			
 		}
 		else {
