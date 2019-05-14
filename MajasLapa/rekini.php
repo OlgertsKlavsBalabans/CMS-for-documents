@@ -56,7 +56,7 @@ if(isset($_POST['submit'])!=""){
             die(mysql_error());
         }
     }
-    if (strpos($name, 'ppt') !== false) {
+    if (strpos($name, 'xls') !== false) {
 
         $username=$_POST['user_name'];
         $size=$_FILES['photo']['size'];
@@ -73,7 +73,7 @@ if(isset($_POST['submit'])!=""){
             die(mysql_error());
         }
     }
-    if (strpos($name, 'pptx') !== false) {
+    if (strpos($name, 'xlsx') !== false) {
 
         $username=$_POST['user_name'];
         $size=$_FILES['photo']['size'];
@@ -151,7 +151,7 @@ if(isset($_POST['submit'])!=""){
 
             <form enctype="multipart/form-data" action="" name="form" method="post">
                 Select File
-                <input type="file" name="photo" id="photo" accept=".doc,.docx,.odt,.pdf,.ppt,.pptx"  /></td>
+                <input type="file" name="photo" id="photo" accept=".doc,.docx,.odt,.pdf,.xls,.xlsx"  /></td>
                 <input type="submit" name="submit" id="submit" value="Submit" />
             </form>
             <br />
