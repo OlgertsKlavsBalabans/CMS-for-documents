@@ -1,83 +1,216 @@
 <?php
 session_start();
-$hostname = "localhost";
-$username = "user";
-$password = "";
-$databaseName="writers";
+$user_name=$_SESSION['login_user'];
+$conn=new PDO('mysql:host=localhost; dbname=csm', 'root', '') or die(mysql_error());
+if(isset($_POST['submit'])!=""){
 
-$conn = mysqli_connect("localhost", "root", "");
+    $name=$_FILES['photo']['name'];
+    if (strpos($name, 'odt') !== false) {
 
-mysqli_select_db($conn, "writers");
+        $username=$_POST['user_name'];
+        $size=$_FILES['photo']['size'];
+        $type=$_FILES['photo']['type'];
+        $temp=$_FILES['photo']['tmp_name'];
+        $caption1=$_POST['caption'];
+        $link=$_POST['link'];
+        move_uploaded_file($temp,"upload/".$name);
+        $query=$conn->query("insert into upload(name, user_name)values('$name', '$user_name')");
+        if($query){
+            header("location:ligumi.php");
+        }
+        else{
+            die(mysql_error());
+        }
+    }
+    else if (strpos($name, 'docx') !== false) {
+
+        $username=$_POST['user_name'];
+        $size=$_FILES['photo']['size'];
+        $type=$_FILES['photo']['type'];
+        $temp=$_FILES['photo']['tmp_name'];
+        $caption1=$_POST['caption'];
+        $link=$_POST['link'];
+        move_uploaded_file($temp,"upload/".$name);
+        $query=$conn->query("insert into upload(name, user_name)values('$name', '$user_name')");
+        if($query){
+            header("location:ligumi.php");
+        }
+        else{
+            die(mysql_error());
+        }
+    }
+    else if (strpos($name, 'doc') !== false) {
+
+        $username=$_POST['user_name'];
+        $size=$_FILES['photo']['size'];
+        $type=$_FILES['photo']['type'];
+        $temp=$_FILES['photo']['tmp_name'];
+        $caption1=$_POST['caption'];
+        $link=$_POST['link'];
+        move_uploaded_file($temp,"upload/".$name);
+        $query=$conn->query("insert into upload(name, user_name)values('$name', '$user_name')");
+        if($query){
+            header("location:ligumi.php");
+        }
+        else{
+            die(mysql_error());
+        }
+    }
+    if (strpos($name, 'ppt') !== false) {
+
+        $username=$_POST['user_name'];
+        $size=$_FILES['photo']['size'];
+        $type=$_FILES['photo']['type'];
+        $temp=$_FILES['photo']['tmp_name'];
+        $caption1=$_POST['caption'];
+        $link=$_POST['link'];
+        move_uploaded_file($temp,"upload/".$name);
+        $query=$conn->query("insert into upload(name, user_name)values('$name', '$user_name')");
+        if($query){
+            header("location:ligumi.php");
+        }
+        else{
+            die(mysql_error());
+        }
+    }
+    if (strpos($name, 'pptx') !== false) {
+
+        $username=$_POST['user_name'];
+        $size=$_FILES['photo']['size'];
+        $type=$_FILES['photo']['type'];
+        $temp=$_FILES['photo']['tmp_name'];
+        $caption1=$_POST['caption'];
+        $link=$_POST['link'];
+        move_uploaded_file($temp,"upload/".$name);
+        $query=$conn->query("insert into upload(name, user_name)values('$name', '$user_name')");
+        if($query){
+            header("location:ligumi.php");
+        }
+        else{
+            die(mysql_error());
+        }
+    }
+    if (strpos($name, 'pdf') !== false) {
+
+        $username=$_POST['user_name'];
+        $size=$_FILES['photo']['size'];
+        $type=$_FILES['photo']['type'];
+        $temp=$_FILES['photo']['tmp_name'];
+        $caption1=$_POST['caption'];
+        $link=$_POST['link'];
+        move_uploaded_file($temp,"upload/".$name);
+        $query=$conn->query("insert into upload(name, user_name)values('$name', '$user_name')");
+        if($query){
+            header("location:ligumi.php");
+        }
+        else{
+            die(mysql_error());
+        }
+    }
+}
 ?>
 
 <!DOCTYPE html>
 <html>
 
 <head>
-<title>iDala rēķini</title>
-<link rel="icon" href="favicon.ico" type="image/ico">
-<link rel="stylesheet" type="text/css" href="style.css">
+    <title>iDala līgumi</title>
+    <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="screen">
+    <link rel="stylesheet" type="text/css" href="css/DT_bootstrap.css">
+    <link rel="icon" href="favicon.ico" type="image/ico">
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
+<script src="js/jquery.js" type="text/javascript"></script>
+<script src="js/bootstrap.js" type="text/javascript"></script>
 
+<script type="text/javascript" charset="utf-8" language="javascript" src="js/jquery.dataTables.js"></script>
+<script type="text/javascript" charset="utf-8" language="javascript" src="js/DT_bootstrap.js"></script>
 <body>
 
 <div class="header">
-  <h1>iDala rēķini</h1>
-  <p>CMS dokumentu pārvaldībai tiešsaistē</p>
+    <h1>iDala līgumi</h1>
+    <p>CMS dokumentu pārvaldībai tiešsaistē</p>
 </div>
 
 <div class="topnav">
-  <a href="profile.php">Augšupielādēt</a>
-  <a href="pavadzimes.php">Pavadzīmes</a>
-   <a href="rekini.php">Rēķini</a>
+    <a href="pavadzimes.php">Pavadzīmes</a>
+    <a href="rekini.php">Rēķini</a>
     <a href="ligumi.php">Līgumi</a>
-	 <a href="citi.php">Citi dokumenti</a>
-  <a href="logout.php" style="float:right">Iziet</a>
+    <a href="citi.php">Citi dokumenti</a>
+    <a href="logout.php" style="float:right">Iziet</a>
 </div>
 
 <div class="row">
-  <div class="leftcolumn">
-   
-    <div class="cardDifferent">
-      <h2 align="center">iDala ievietotie rēķini</h2>
-	</div>
-<?php
-$sql = "SELECT id, name, email, title, content FROM writing ORDER BY id DESC;";
-$result = $conn->query($sql);
+    <div class="leftcolumn">
 
-if ($result->num_rows > 0) {
-// output data of each row
-	while($row = $result->fetch_assoc()) {
-        echo " <div class='card'><br> <b>Autors:</b> " . $row["name"].  " <br> <b>Epasta adrese:</b> " . $row["email"].  "<br><b>Virsraksts:</b> " . $row["title"].  "<br> <b>Darbs:</b> " . $row["content"]. "<br><br> </div>";
-	} 
-}
-else {
-	echo "<div class='card'> Nav ievietots neviens darbs! </div>";
-}
-?>  
- 
-  </div>
+        <div class="cardDifferent">
+            <h2 align="center">iDala ievietotie līgumi</h2>
+        </div>
+        <div class="cardDifferent">
 
-  <div class="rightcolumn">
-    <div id="imageTag">
-      <h2>iDala</h2>
-      <script src="js/Giffy.js"></script>
+
+            <form enctype="multipart/form-data" action="" name="form" method="post">
+                Select File
+                <input type="file" name="photo" id="photo" accept=".doc,.docx,.odt,.pdf,.ppt,.pptx"  /></td>
+                <input type="submit" name="submit" id="submit" value="Submit" />
+            </form>
+            <br />
+            <br />
+            <table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered" id="example">
+                <thead>
+                <tr>
+
+                    <th align="center">Lietotājs</th>>
+                    <th width="80%" align="center">Fails</th>
+                    <th align="center">Lejupladēt</th>
+                </tr>
+                </thead>
+                <?php
+                $query=$conn->query("select * from upload order by id desc");
+                while($row=$query->fetch()){
+                    $name=$row['name'];
+                    $user_name=$row['user_name'];
+                    ?>
+                    <tr>
+
+
+                        <td>
+                            &nbsp;<?php echo $user_name ;?>
+                        </td>
+
+                        <td>
+                            &nbsp;<?php echo $name ;?>
+                        </td>
+
+                        <td>
+                            <button class="alert-success"><a href="download.php?filename=<?php echo $name;?>">Download</a></button>
+                        </td>
+                    </tr>
+                <?php }?>
+            </table>
+        </div>
     </div>
-	
-    <div class="card">
-		<h3>Informācija</h3>
-		<p>Kādam nolūkam paredzēta šī mājaslapa? Uzzini <a href ="why.html">šeit<a>!<br></p>
+
+    <div class="rightcolumn">
+        <div class="card">
+            <h2>iDala</h2>
+            <img src="source.gif" alt=""style="width:12.5em;height:13.12em;">
+        </div>
+
+        <div class="card">
+            <h3>Informācija</h3>
+            <p>Kādam nolūkam paredzēta šī mājaslapa? Uzzini <a href ="why.html">šeit<a>!<br></p>
+        </div>
+
+        <div class="card">
+            <h3>Saistītas lapas</h3>
+            <p><a href ="https://lv.wikipedia.org/wiki/Satura_p%C4%81rvald%C4%ABbas_sist%C4%93ma">Informācija par CMS<a><br></p>
+        </div>
     </div>
-	
-    <div class="card">
-      <h3>Saistītas lapas</h3>
-      <p><a href ="https://lv.wikipedia.org/wiki/Satura_p%C4%81rvald%C4%ABbas_sist%C4%93ma">Informācija par CMS<a><br></p>
-    </div>
-  </div>
 </div>
 
 <div class="footer">
-  <h2>iDala dokumentu pārvaldība</h2>
+    <h2>iDala dokumentu pārvaldība</h2>
 </div>
 
 </body>
