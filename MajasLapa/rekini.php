@@ -4,7 +4,7 @@ $user_name=$_SESSION['login_user'];
 $conn=new PDO('mysql:host=localhost; dbname=csm', 'root', '') or die(mysql_error());
 if(isset($_POST['submit'])!=""){
 
-    $name_rekins=$_FILES['photo']['name'];
+    $name=$_FILES['photo']['name'];
     if (strpos($name, 'odt') !== false) {
 
         $username=$_POST['user_name'];
@@ -160,7 +160,7 @@ if(isset($_POST['submit'])!=""){
                 <thead>
                 <tr>
 
-                    <th align="center">Lietotājs</th>>
+                    <th align="center">Lietotājs</th>
                     <th width="80%" align="center">Fails</th>
                     <th align="center">Lejupladēt</th>
                 </tr>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 14, 2019 at 11:04 PM
+-- Generation Time: May 14, 2019 at 11:56 PM
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 7.3.2
 
@@ -31,17 +31,16 @@ SET time_zone = "+00:00";
 CREATE TABLE `citi` (
   `id` int(11) NOT NULL,
   `name` varchar(200) NOT NULL,
-  `user_name` varchar(255) NOT NULL
+  `user_name` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `citi`
 --
 
-INSERT INTO `citi` (`id`, `name`, `user_name`) VALUES
-(1, 'fb7335d4d27d430fcd76f90a7515d40e.jpg', ''),
-(2, 'Lekcija9.ppt', ''),
-(3, 'Lekcija13 - Nepilna.ppt', '');
+INSERT INTO `citi` (`id`, `name`, `user_name`, `email`) VALUES
+(4, 'Darbu_standarts_IT_gada_proj.doc', 'admin', '');
 
 -- --------------------------------------------------------
 
@@ -52,17 +51,18 @@ INSERT INTO `citi` (`id`, `name`, `user_name`) VALUES
 CREATE TABLE `ligumi` (
   `id` int(11) NOT NULL,
   `name` varchar(200) NOT NULL,
-  `user_name` varchar(255) NOT NULL
+  `user_name` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `ligumi`
 --
 
-INSERT INTO `ligumi` (`id`, `name`, `user_name`) VALUES
-(1, 'fb7335d4d27d430fcd76f90a7515d40e.jpg', ''),
-(2, 'Lekcija9.ppt', ''),
-(3, 'Lekcija13 - Nepilna.ppt', '');
+INSERT INTO `ligumi` (`id`, `name`, `user_name`, `email`) VALUES
+(4, '2_home_work.docx', 'admin', ''),
+(5, 'Darbu_standarts_IT_gada_proj.doc', 'admin', ''),
+(6, 'Undine_Kobitjeva_CV (1).docx', 'admin', '');
 
 -- --------------------------------------------------------
 
@@ -73,18 +73,16 @@ INSERT INTO `ligumi` (`id`, `name`, `user_name`) VALUES
 CREATE TABLE `pavadzimes` (
   `id` int(11) NOT NULL,
   `name` varchar(200) NOT NULL,
-  `user_name` varchar(255) NOT NULL
+  `user_name` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `pavadzimes`
 --
 
-INSERT INTO `pavadzimes` (`id`, `name`, `user_name`) VALUES
-(1, 'fb7335d4d27d430fcd76f90a7515d40e.jpg', ''),
-(2, 'Lekcija9.ppt', ''),
-(3, 'Lekcija13 - Nepilna.ppt', ''),
-(4, 'CV (1).docx', 'admin');
+INSERT INTO `pavadzimes` (`id`, `name`, `user_name`, `email`) VALUES
+(5, 'Prakses-ligums_2016.02.03..doc', 'admin', '');
 
 -- --------------------------------------------------------
 
@@ -95,41 +93,16 @@ INSERT INTO `pavadzimes` (`id`, `name`, `user_name`) VALUES
 CREATE TABLE `rekins` (
   `id` int(11) NOT NULL,
   `name` varchar(200) NOT NULL,
-  `user_name` varchar(255) NOT NULL
+  `user_name` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `rekins`
 --
 
-INSERT INTO `rekins` (`id`, `name`, `user_name`) VALUES
-(1, 'fb7335d4d27d430fcd76f90a7515d40e.jpg', ''),
-(2, 'Lekcija9.ppt', ''),
-(3, 'Lekcija13 - Nepilna.ppt', '');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `upload`
---
-
-CREATE TABLE `upload` (
-  `id` int(11) NOT NULL,
-  `name` varchar(200) NOT NULL,
-  `user_name` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `upload`
---
-
-INSERT INTO `upload` (`id`, `name`, `user_name`) VALUES
-(1, 'fb7335d4d27d430fcd76f90a7515d40e.jpg', ''),
-(2, 'Lekcija9.ppt', ''),
-(3, 'Lekcija13 - Nepilna.ppt', ''),
-(4, '2_home_work.docx', 'admin'),
-(5, '3_home_work.docx', 'admin'),
-(6, '4_home_work.docx', 'admin');
+INSERT INTO `rekins` (`id`, `name`, `user_name`, `email`) VALUES
+(4, 'Darbu_standarts_IT_gada_proj.doc', 'admin', '');
 
 -- --------------------------------------------------------
 
@@ -191,12 +164,6 @@ ALTER TABLE `rekins`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `upload`
---
-ALTER TABLE `upload`
-  ADD PRIMARY KEY (`id`);
-
---
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
@@ -210,31 +177,25 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `citi`
 --
 ALTER TABLE `citi`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `ligumi`
 --
 ALTER TABLE `ligumi`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `pavadzimes`
 --
 ALTER TABLE `pavadzimes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `rekins`
 --
 ALTER TABLE `rekins`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
---
--- AUTO_INCREMENT for table `upload`
---
-ALTER TABLE `upload`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `users`

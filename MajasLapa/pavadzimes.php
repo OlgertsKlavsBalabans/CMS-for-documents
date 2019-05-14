@@ -160,7 +160,7 @@ if(isset($_POST['submit'])!=""){
                 <thead>
                 <tr>
 
-                    <th align="center">Lietotājs</th>>
+                    <th align="center">Lietotājs</th>
                     <th width="80%" align="center">Fails</th>
                     <th align="center">Lejupladēt</th>
                 </tr>
