@@ -35,7 +35,7 @@
 
 /*Image tag so all gifs are displayed in div*/
 #imageTag {
-    background-color: #f1f1f1;
+    background: #f1f1f1;
     padding: 20px;
     margin-top: 20px;
 }
