@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 14, 2019 at 06:31 PM
+-- Generation Time: May 14, 2019 at 08:11 PM
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 7.3.2
 
@@ -49,6 +49,7 @@ INSERT INTO `upload` (`id`, `name`) VALUES
 --
 
 CREATE TABLE `users` (
+  `id` int(11) NOT NULL,
   `fname` varchar(20) NOT NULL,
   `lname` varchar(20) NOT NULL,
   `age` int(11) NOT NULL,
@@ -63,14 +64,14 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`fname`, `lname`, `age`, `gender`, `email`, `username`, `password`, `access`) VALUES
-('olgerts', 'balabans', 20, '0', 'figiter771@gmail.com', 'figiter771', 'kaka1111', 0),
-('olgerts', 'balabans', 20, '0', 'figiter771@gmail.com', 'figiter771', 'kaka1111', 0),
-('olgerts', 'balabans', 15, 'male', 'figiter771@gmail.com', 'figiter771', 'kaka1111', 0),
-('Olly', 'Bally', 20, 'male', 'figiter1990@gmail.com', 'admin', 'admin123', 0),
-('Martins', 'Martins', 14, 'male', 'martins.martins@va.lv', 'martinsKruts', 'martinsIrGudrs', 1),
-('Martins', 'balabans', 19, 'male', 'martins.martins@va.lv', 'martinsKruts', 'martinsNavGudrs', 2),
-('Martins', 'balabans', 19, 'male', 'martins.martins@va.lv', 'martinsKruts', 'bananiIrGarsigi', 2);
+INSERT INTO `users` (`id`, `fname`, `lname`, `age`, `gender`, `email`, `username`, `password`, `access`) VALUES
+(1, 'olgerts', 'balabans', 20, '0', 'figiter771@gmail.com', 'figiter771', 'kaka1111', 0),
+(2, 'olgerts', 'balabans', 20, '0', 'figiter771@gmail.com', 'figiter771', 'kaka1111', 0),
+(3, 'olgerts', 'balabans', 15, 'male', 'figiter771@gmail.com', 'figiter771', 'kaka1111', 0),
+(4, 'Olly', 'Bally', 20, 'male', 'figiter1990@gmail.com', 'admin', 'admin123', 0),
+(5, 'Martins', 'Martins', 14, 'male', 'martins.martins@va.lv', 'martinsKruts', 'martinsIrGudrs', 1),
+(6, 'Martins', 'balabans', 19, 'male', 'martins.martins@va.lv', 'martinsKruts', 'martinsNavGudrs', 2),
+(7, 'Martins', 'balabans', 19, 'male', 'martins.martins@va.lv', 'martinsKruts', 'bananiIrGarsigi', 2);
 
 --
 -- Indexes for dumped tables
@@ -83,6 +84,12 @@ ALTER TABLE `upload`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -91,6 +98,12 @@ ALTER TABLE `upload`
 --
 ALTER TABLE `upload`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `users`
+--
+ALTER TABLE `users`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
