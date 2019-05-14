@@ -1,111 +1,20 @@
 <?php
 session_start();
-$user_name=$_SESSION['login_user'];
 $conn=new PDO('mysql:host=localhost; dbname=csm', 'root', '') or die(mysql_error());
 if(isset($_POST['submit'])!=""){
-
     $name=$_FILES['photo']['name'];
-    if (strpos($name, 'odt') !== false) {
-
-        $username=$_POST['user_name'];
-        $size=$_FILES['photo']['size'];
-        $type=$_FILES['photo']['type'];
-        $temp=$_FILES['photo']['tmp_name'];
-        $caption1=$_POST['caption'];
-        $link=$_POST['link'];
-        move_uploaded_file($temp,"upload/".$name);
-        $query=$conn->query("insert into upload(name, user_name)values('$name', '$user_name')");
-        if($query){
-            header("location:ligumi.php");
-        }
-        else{
-            die(mysql_error());
-        }
+    $size=$_FILES['photo']['size'];
+    $type=$_FILES['photo']['type'];
+    $temp=$_FILES['photo']['tmp_name'];
+    $caption1=$_POST['caption'];
+    $link=$_POST['link'];
+    move_uploaded_file($temp,"upload/".$name);
+    $query=$conn->query("insert into upload(name)values('$name')");
+    if($query){
+        header("location:ligumi.php");
     }
-    else if (strpos($name, 'docx') !== false) {
-
-        $username=$_POST['user_name'];
-        $size=$_FILES['photo']['size'];
-        $type=$_FILES['photo']['type'];
-        $temp=$_FILES['photo']['tmp_name'];
-        $caption1=$_POST['caption'];
-        $link=$_POST['link'];
-        move_uploaded_file($temp,"upload/".$name);
-        $query=$conn->query("insert into upload(name, user_name)values('$name', '$user_name')");
-        if($query){
-            header("location:ligumi.php");
-        }
-        else{
-            die(mysql_error());
-        }
-    }
-    else if (strpos($name, 'doc') !== false) {
-
-        $username=$_POST['user_name'];
-        $size=$_FILES['photo']['size'];
-        $type=$_FILES['photo']['type'];
-        $temp=$_FILES['photo']['tmp_name'];
-        $caption1=$_POST['caption'];
-        $link=$_POST['link'];
-        move_uploaded_file($temp,"upload/".$name);
-        $query=$conn->query("insert into upload(name, user_name)values('$name', '$user_name')");
-        if($query){
-            header("location:ligumi.php");
-        }
-        else{
-            die(mysql_error());
-        }
-    }
-    else if (strpos($name, 'ppt') !== false) {
-
-        $username=$_POST['user_name'];
-        $size=$_FILES['photo']['size'];
-        $type=$_FILES['photo']['type'];
-        $temp=$_FILES['photo']['tmp_name'];
-        $caption1=$_POST['caption'];
-        $link=$_POST['link'];
-        move_uploaded_file($temp,"upload/".$name);
-        $query=$conn->query("insert into upload(name, user_name)values('$name', '$user_name')");
-        if($query){
-            header("location:ligumi.php");
-        }
-        else{
-            die(mysql_error());
-        }
-    }
-    else if (strpos($name, 'pptx') !== false) {
-
-        $username=$_POST['user_name'];
-        $size=$_FILES['photo']['size'];
-        $type=$_FILES['photo']['type'];
-        $temp=$_FILES['photo']['tmp_name'];
-        $caption1=$_POST['caption'];
-        $link=$_POST['link'];
-        move_uploaded_file($temp,"upload/".$name);
-        $query=$conn->query("insert into upload(name, user_name)values('$name', '$user_name')");
-        if($query){
-            header("location:ligumi.php");
-        }
-        else{
-            die(mysql_error());
-        }
-    }
-    else if (strpos($name, 'pdf') !== false) {
-
-        $username=$_POST['user_name'];
-        $size=$_FILES['photo']['size'];
-        $type=$_FILES['photo']['type'];
-        $temp=$_FILES['photo']['tmp_name'];
-        $caption1=$_POST['caption'];
-        $link=$_POST['link'];
-        move_uploaded_file($temp,"upload/".$name);
-        $query=$conn->query("insert into upload(name, user_name)values('$name', '$user_name')");
-        if($query){
-            header("location:ligumi.php");
-        }
-        else{
-            die(mysql_error());
-        }
+    else{
+        die(mysql_error());
     }
 }
 ?>
@@ -133,6 +42,7 @@ if(isset($_POST['submit'])!=""){
 </div>
 
 <div class="topnav">
+  <a href="profile.php">Augšupielādēt</a>
   <a href="pavadzimes.php">Pavadzīmes</a>
    <a href="rekini.php">Rēķini</a>
     <a href="ligumi.php">Līgumi</a>
@@ -147,11 +57,16 @@ if(isset($_POST['submit'])!=""){
       <h2 align="center">iDala ievietotie līgumi</h2>
 	</div>
       <div class="cardDifferent">
+      <div class="row-fluid">
+          <div class="span12">
+              <div class="container">
 
-
+                  <h1><p>Upload  And  Download Files</p></h1>
+                  <br />
+                  <br />
                   <form enctype="multipart/form-data" action="" name="form" method="post">
                       Select File
-                      <input type="file" name="photo" id="photo" accept=".doc,.docx,.odt,.pdf,.ppt,.pptx"  /></td>
+                      <input type="file" name="photo" id="photo" /></td>
                       <input type="submit" name="submit" id="submit" value="Submit" />
                   </form>
                   <br />
@@ -159,57 +74,45 @@ if(isset($_POST['submit'])!=""){
                   <table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered" id="example">
                       <thead>
                       <tr>
-
-                          <th align="center">Lietotājs</th>>
-                          <th width="80%" align="center">Fails</th>
-                          <th align="center">Lejupladēt</th>
+                          <th width="90%" align="center">Files</th>
+                          <th align="center">Action</th>
                       </tr>
                       </thead>
                       <?php
                       $query=$conn->query("select * from upload order by id desc");
                       while($row=$query->fetch()){
                           $name=$row['name'];
-                          $user_name=$row['user_name'];
                           ?>
                           <tr>
-
-
-                              <td>
-                                  &nbsp;<?php echo $user_name ;?>
-                              </td>
 
                               <td>
                                   &nbsp;<?php echo $name ;?>
                               </td>
-
                               <td>
                                   <button class="alert-success"><a href="download.php?filename=<?php echo $name;?>">Download</a></button>
                               </td>
                           </tr>
                       <?php }?>
                   </table>
+              </div>
+          </div>
       </div>
   </div>
 
- <div class="rightcolumn">
-  <div class ="card">
-	<h2>iDala</h2>
-	</div>
-	<div class ="card">
+  <div class="rightcolumn">
     <div id="imageTag">
-	<h2> This is you </h2>
-      
-      <script src="js/Giffy.js"></script> 
+      <h2>iDala</h2>
+      <script src="js/Giffy.js"></script>
     </div>
-	</div>
 	
     <div class="card">
 		<h3>Informācija</h3>
 		<p>Kādam nolūkam paredzēta šī mājaslapa? Uzzini <a href ="why.html">šeit<a>!<br></p>
     </div>
+	
     <div class="card">
       <h3>Saistītas lapas</h3>
-       <p><a href ="https://lv.wikipedia.org/wiki/Satura_p%C4%81rvald%C4%ABbas_sist%C4%93ma">Informācija par CMS<a><br></p>
+      <p><a href ="https://lv.wikipedia.org/wiki/Satura_p%C4%81rvald%C4%ABbas_sist%C4%93ma">Informācija par CMS</a><br></p>
     </div>
   </div>
 </div>
