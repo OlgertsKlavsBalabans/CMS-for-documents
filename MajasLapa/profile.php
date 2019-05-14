@@ -98,7 +98,7 @@ formaa.addEventListener("submit", validateForm, false);
   <div class="rightcolumn">
     <div class="card">
       <h2>iDala</h2>
-      <img src="source.gif" alt=""style="width:12.5em;height:13.12em;">
+      <script src="js/Giffy.js"></script>
     </div>
 	
     <div class="card">

@@ -1,4 +1,4 @@
-var gif1 = ["..\images\gif1.gif", "..\images\gif2.gif", "..\images\gif3.gif"]
+var gif1 = ["~\images\gif1.gif", "~\images\gif2.gif", "~\images\gif3.gif"]
 var integer = 0;
 
 
