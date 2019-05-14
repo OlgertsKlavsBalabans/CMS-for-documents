@@ -1,5 +1,5 @@
 <?php
-$conn=new PDO('mysql:host=localhost; dbname=demo', 'root', '') or die(mysql_error());
+$conn=new PDO('mysql:host=localhost; dbname=csm', 'root', '') or die(mysql_error());
 if(isset($_POST['submit'])!=""){
     $name=$_FILES['photo']['name'];
     $size=$_FILES['photo']['size'];
@@ -7,7 +7,7 @@ if(isset($_POST['submit'])!=""){
     $temp=$_FILES['photo']['tmp_name'];
     $caption1=$_POST['caption'];
     $link=$_POST['link'];
-    move_uploaded_file($temp,"files/".$name);
+    move_uploaded_file($temp,"upload/".$name);
     $query=$conn->query("insert into upload(name)values('$name')");
     if($query){
         header("location:ligumi.php");
