@@ -1,4 +1,5 @@
 <?php
+session_start();
 $conn=new PDO('mysql:host=localhost; dbname=csm', 'root', '') or die(mysql_error());
 if(isset($_POST['submit'])!=""){
     $name=$_FILES['photo']['name'];
