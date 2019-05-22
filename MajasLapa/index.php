@@ -1,5 +1,7 @@
 <?php
 session_start(); 
+
+
 $error=''; 
 if (isset($_POST['submit'])) {
 	if (empty($_POST['username']) || empty($_POST['password'])) {
@@ -8,6 +10,8 @@ if (isset($_POST['submit'])) {
 	else {
 		$username=$_POST['username'];
 		$password=$_POST['password'];
+        $password = sha1($password);
+
 		
 		$connection = mysqli_connect("localhost", "root", "");
 		$db = mysqli_select_db($connection, "csm");
@@ -16,9 +20,17 @@ if (isset($_POST['submit'])) {
 		$rows = mysqli_num_rows($query);
 		if ($rows == 1) {
 			$_SESSION['login_user']=$username;	
-			$_SESSION['user']=$row[8]; 
-			$_SESSION['email']=$row[5]; 
-			header("location: profile.php"); 			
+			$_SESSION['user']=$row[8];
+            $_SESSION['email']=$row[5];
+            if($_SESSION['user'] == 0){
+                header("location: admin.php");
+            }
+            elseif(empty($_SESSION['login_user'])){
+    
+                echo "<meta http-equiv='refresh' content='0;url=/cms/index.php'>";
+            }else{
+			  header("location: pavadzimes.php");
+            }
 		}
 		else {
 			$error = "<font color='red'><b><i><br>Nepareizs lietotājvārds un / vai parole!</i></b></font>";
@@ -28,7 +40,7 @@ if (isset($_POST['submit'])) {
 }
 
 if(isset($_SESSION['login_user'])&& $_SESSION['login_user'] == true){
-	print "<script language=\"Javascript\">document.location.href='profile.php' ;</script>";
+	print "<script language=\"Javascript\">document.location.href='pavadzimes.php' ;</script>";
 }
 ?>
 <!DOCTYPE html>
@@ -42,7 +54,7 @@ if(isset($_SESSION['login_user'])&& $_SESSION['login_user'] == true){
 <body align="center">
 	<div id="login">
 	<script src="js/GiffyIndex.js" ></script>
-	<h2 id="regisText">Pieslēgties lapai:</h2>
+	<h2 align="center" id="regisText">Pieslēgties lapai:</h2>
 	<form action="" method="post">
 		<label>Lietotājvārds:</label>
 		<input id="name" name="username" placeholder="lietotajvards" type="text">
@@ -52,7 +64,7 @@ if(isset($_SESSION['login_user'])&& $_SESSION['login_user'] == true){
 		<span><?php echo $error; ?></span>
 	</form>
 		
-	<p>Kādam nolūkam paredzēta šī mājaslapa? Uzzini <a href ="why.html">šeit<a>!<br></p>
+        <p>Kādam nolūkam paredzēta šī mājaslapa? Uzzini <a href ="why.html">šeit!</a><br></p>
 	</div>
 </body>
 

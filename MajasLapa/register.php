@@ -1,5 +1,16 @@
 <!doctype html>
 <?php
+session_start();
+
+if(empty($_SESSION['login_user'])){
+    echo "<meta http-equiv='refresh' content='0;url=/cms/index.php'>";
+}
+else{
+
+if($_SESSION['user'] == 0){
+
+
+
 $servername = "localhost";
 $username="root";
 $password="";
@@ -19,6 +30,7 @@ $gender=$_POST['gender'];
 $email=$_POST['email'];
 $user = $_POST['username'];
 $pass = $_POST['password'];
+$pass = sha1($pass);
 $access = $_POST['access'];
 $register_query = "INSERT INTO `users`(`fname`, `lname`, `age`, `gender`, `email`, `username`, `password`,`access`) VALUES ('$fname','$lname', '$age','$gender','$email','$user','$pass','$access')";
 $username_check_query = mysqli_query($conn, "select * from users where username='$user'");
@@ -32,7 +44,7 @@ echo('<div class="alert alert-success" align="center">
   </div>');
 
 }else{
-echo("Error in registration");
+echo("Klūda reģistrācijā");
 }
  
 }
@@ -85,12 +97,12 @@ else {
 
 <tr>
 <td>Dzimums</td>
-<td><input type="radio" name="gender" value="male" id="gender">Vīrietis</td>
+<td><input type="radio" name="gender" value="Vīrietis" id="gender">Vīrietis</td>
 </tr>
 
 <tr>
 <td></td>
-<td><input type="radio" name="gender" value="female" id="gender" placeholder="12">Sieviete</td>
+<td><input type="radio" name="gender" value="Sieviete" id="gender" placeholder="12">Sieviete</td>
 </tr>
  
 <tr>
@@ -116,19 +128,16 @@ else {
 <tr>
 
 <tr>
-<td>Access līmenis</td>
-<td><input type="radio" name = "access" value = "1" placeholder="1" id="access"> Administrator</td>
+<td>Piekļuves līmenis</td>
+<td><input type="radio" name = "access" value = "0" placeholder="1" id="access"> Administrator</td>
 </tr>
 <tr>
 <tr>
 <td></td>
-<td><input type="radio" name = "access" value = "2" placeholder="1" id="access">User</td>
+<td><input type="radio" name = "access" value = "1" placeholder="1" id="access">User</td>
 </tr>
 <tr>
-<tr>
-<td></td>
-<td><input type="radio" name = "access" value = "3" placeholder="1" id="access">Viewer</td>
-</tr>
+
 <tr>
 
 <tr>
@@ -138,10 +147,9 @@ else {
 </table>
 <tr>
 <td></td>
-<td>><?php echo $error; ?></</td>
+<td><?php echo $error; ?></td>
 </tr>
-</table>
-<p><a href="index.php">Uz sākumu</a></p>
+<p><a href="/cms/admin.php">Uz Administracijas paneli</a></p>
 <p><a href="why.html">Informācija</a></p>
 
 </form>
@@ -219,3 +227,10 @@ forma.addEventListener("submit", validateForm, false);
 
 </body>
 </html>
+
+<?php
+}else{
+    echo "<meta http-equiv='refresh' content='0;url=/./index.php'>";
+}
+
+}
