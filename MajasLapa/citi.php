@@ -16,7 +16,7 @@ if(isset($_POST['submit'])!=""){
         move_uploaded_file($temp,"upload/".$name);
         $query=$conn->query("insert into citi(name, user_name)values('$name', '$user_name')");
         if($query){
-            header("location:ligumi.php");
+            header("location:citi.php");
         }
         else{
             die(mysql_error());
@@ -33,7 +33,7 @@ if(isset($_POST['submit'])!=""){
         move_uploaded_file($temp,"upload/".$name);
         $query=$conn->query("insert into citi(name, user_name)values('$name', '$user_name')");
         if($query){
-            header("location:ligumi.php");
+            header("location:citi.php");
         }
         else{
             die(mysql_error());
@@ -50,7 +50,7 @@ if(isset($_POST['submit'])!=""){
         move_uploaded_file($temp,"upload/".$name);
         $query=$conn->query("insert into citi(name, user_name)values('$name', '$user_name')");
         if($query){
-            header("location:ligumi.php");
+            header("location:citi.php");
         }
         else{
             die(mysql_error());
@@ -67,7 +67,7 @@ if(isset($_POST['submit'])!=""){
         move_uploaded_file($temp,"upload/".$name);
         $query=$conn->query("insert into citi(name, user_name)values('$name', '$user_name')");
         if($query){
-            header("location:ligumi.php");
+            header("location:citi.php");
         }
         else{
             die(mysql_error());
@@ -84,7 +84,7 @@ if(isset($_POST['submit'])!=""){
         move_uploaded_file($temp,"upload/".$name);
         $query=$conn->query("insert into citi(name, user_name)values('$name', '$user_name')");
         if($query){
-            header("location:ligumi.php");
+            header("location:citi.php");
         }
         else{
             die(mysql_error());
@@ -101,7 +101,7 @@ if(isset($_POST['submit'])!=""){
         move_uploaded_file($temp,"upload/".$name);
         $query=$conn->query("insert into citi(name, user_name)values('$name', '$user_name')");
         if($query){
-            header("location:ligumi.php");
+            header("location:citi.php");
         }
         else{
             die(mysql_error());
