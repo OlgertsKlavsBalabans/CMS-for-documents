@@ -1,0 +1,12 @@
+Majas lapa jaliek iekš htdocs/cms/
+
+* Jo daudz kur izmantotas saites , kas iet uz cms, lidz ar to , 
+ja tik uzlikts cits nosaukums nestradas dala saišu.
+
+
+Ta ka kontu paroles ir šifetas:
+Ir uzstaditi tris lietotaji ar sekojošam parolem:
+
+Lietotajvards - egils.lobuzovs Parole - admin123 (Administratora tiesibas);
+Lietotajvards - colgate Parole - admin1234 (Administratora tiesibas);
+Lietotajvards - Vilks Parole - vilks2019 (Lietotaja tiesibas).
