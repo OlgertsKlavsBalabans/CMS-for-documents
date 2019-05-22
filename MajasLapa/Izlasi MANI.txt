@@ -4,7 +4,7 @@ Majas lapa jaliek iekš htdocs/cms/
 ja tik uzlikts cits nosaukums nestradas dala saišu.
 
 
-Ta ka kontu paroles ir šifetas:
+Ta ka kontu paroles ir šifretas:
 Ir uzstaditi tris lietotaji ar sekojošam parolem:
 
 Lietotajvards - egils.lobuzovs Parole - admin123 (Administratora tiesibas);
